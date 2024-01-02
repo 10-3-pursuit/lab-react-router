@@ -1,6 +1,6 @@
 import React from "react";
-import { useState,useEffect } from "react";
-import {Route, Routes, useNavigate, useLocation} from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Route, Routes, useNavigate, useLocation, Navigate } from "react-router-dom";
 
 /*
   Components
@@ -24,16 +24,6 @@ function App() {
   const [employees] = useState(employeeData);
   const [owners] = useState(ownerData);
   const [pets] = useState(petData);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  
-  useEffect(() => {
-    if (location.pathname === "/pets" || location.pathname === "/pets/") {
-      navigate("/pets/cats");
-    }
-  }, [location.pathname, navigate]);
-  
   return (
     <div className="wrapper">
       <Nav />
@@ -47,8 +37,8 @@ function App() {
           element={<StaffList employees={employees} />}
         />
         <Route path="/pets">
-          <Route index element={<PetsList pets={pets}/>}/>
-          <Route path=":kind" element={<PetsList pets={pets}/>}/>
+          <Route index element={<Navigate to="/pets/cats" replace />} />
+          <Route path=":kind" element={<PetsList pets={pets} />} />
         </Route>
       </Routes>
       <Footer />
