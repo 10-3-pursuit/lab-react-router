@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./PetsListNav.css";
 
 export const PetsListNav = ({ cats, dogs }) => {
@@ -6,10 +7,12 @@ export const PetsListNav = ({ cats, dogs }) => {
     <nav className="pets-nav">
       <ul>
         <li>
-          <a href="/pets/cats">See All Cats ({cats.length})</a>
+        <Link to='/pets/cats'>See All Cats ({cats.length})</Link>
+          {/* <a href="/pets/cats">See All Cats ({cats.length})</a> */}
         </li>
         <li>
-          <a href="/pets/dogs">See All Dogs ({dogs.length})</a>
+        <Link to='/pets/dogs'>See All Dogs ({dogs.length})</Link>
+          {/* <a href="/pets/dogs">See All Dogs ({dogs.length})</a> */}
         </li>
       </ul>
     </nav>
