@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom"
 
 /*
   Components
@@ -27,10 +28,16 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
-      <Footer />
+      <main>
+        <Routes>
+          <Route path="/" exact component={Home} />
+          <Route path="/staff" component={StaffList} />
+          <Route path="/pets" exact render={() => <Redirect to="/pets/cats" />} />
+          <Route path="/pets/cats" render={() => <PetsList animalType="cats" />} />
+          <Route path="/pets/dogs" render={() => <PetsList animalType="dogs" />} />
+        </Routes>
+        <Footer />
+      </main>
     </div>
   );
 }
