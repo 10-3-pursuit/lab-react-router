@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import { Route, Routes } from "react-router-dom";
 /*
   Components
 */
@@ -25,13 +25,17 @@ function App() {
   const [pets] = useState(petData);
 
   return (
-    <div className="wrapper">
-      <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
-      <Footer />
-    </div>
+      <div className="wrapper">
+        <Nav />
+          <Routes>
+            <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+            <Route path="/staff" element={<StaffList employees={employees} />} />
+            <Route path="/pets" element={<PetsList pets={pets} />} />
+            <Route path="/pets/cats" element={<PetsList pets={pets} type= 'cat' />} />
+            <Route path="/pets/dogs" element={<PetsList pets={pets} type='dog'/>} />
+          </Routes>
+        <Footer />
+      </div>
   );
 }
 
