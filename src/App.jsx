@@ -32,22 +32,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
           <Route path="/staff" element={<StaffList employees={employees} />} />
-          {/* <Route path="/pets/cats" element={<PetsList pets={pets} />} /> */}
-
-          {/* <Route path="/pets">
-            <Route index element={<PetsList pets={pets} />} /> 
-            <Route path=":kind" element={<PetsList pets={pets} />} />
-          </Route> */}
-
           <Route path="/pets">
             <Route index element={<PetsList pets={pets} />} /> 
             <Route path=":kind" element={<PetsList pets={pets} />} />
           </Route>
         </Routes>
-      {/* <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} /> */}
-
       <Footer />
     </div>
   );
