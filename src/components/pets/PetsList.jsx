@@ -29,7 +29,7 @@ export const PetsList = ({ pets }) => {
       <section className="pets-list">
         {kind === "dogs" &&
           dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />)}
-        {(kind === "cats" || kind === undefined) &&
+        {kind === "cats" &&
           cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />)}
       </section>
     </section>
