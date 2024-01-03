@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom"; // import BrowserRouter - to t
 import App from "./App.jsx";
 import "./index.css";
 
-const Root = () => {
+const Root = () => { // create Root component to nest App component
     return (
         <BrowserRouter>
         <App />
@@ -12,4 +12,4 @@ const Root = () => {
     );
 };
 
-ReactDOM.createRoot(document.getElementById("root")).render(Root);
+ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
