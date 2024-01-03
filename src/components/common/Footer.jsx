@@ -5,12 +5,8 @@ import { Link } from "react-router-dom"
 function Footer() {
   return (
     <footer>
-      <p>Northwest Animal Hospital. 2022.</p>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-      </ul>
+      <Link to="/"><p>Northwest Animal Hospital. 2022.</p></Link>
+
     </footer>
   );
 }

@@ -30,11 +30,9 @@ function App() {
       <Nav />
       <main>
         <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/staff" component={StaffList} />
-          <Route path="/pets" exact render={() => <Redirect to="/pets/cats" />} />
-          <Route path="/pets/cats" render={() => <PetsList animalType="cats" />} />
-          <Route path="/pets/dogs" render={() => <PetsList animalType="dogs" />} />
+          <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+          <Route path="/staff" element={<StaffList employees={employees} />} />
+          <Route path="/pets" element={<PetsList pets={pets} />} />
         </Routes>
         <Footer />
       </main>
