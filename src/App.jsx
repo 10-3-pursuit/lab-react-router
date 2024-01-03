@@ -30,8 +30,10 @@ function App() {
       {/* create separate views for pages using Route paths */}
       <Routes>
         <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
-        <Route path="/stafflist" element={<StaffList employees={employees} />} />
-        <Route path="/petslist" element={<PetsList pets={pets} />} />
+        <Route path="/staff" element={<StaffList employees={employees} />} /> 
+        {/* path is /staff because in Nav.jsx <a href="/staff">All Staff</a> */}
+        <Route path="/pets" element={<PetsList pets={pets} />} />
+        {/* path is /pets because in Nav.jsx <a href="/pets">All Pets</a> */}
       </Routes>
       <Footer />
     </div>
