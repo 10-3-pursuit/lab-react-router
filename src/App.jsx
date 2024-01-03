@@ -27,9 +27,12 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      {/* create separate views for pages using Route paths */}
+      <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+        <Route path="/stafflist" element={<StaffList employees={employees} />} />
+        <Route path="/petslist" element={<PetsList pets={pets} />} />
+      </Routes>
       <Footer />
     </div>
   );
