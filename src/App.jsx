@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
@@ -10,6 +11,7 @@ import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
 
+// console.log(PetsList);
 /*
   Data
   ---------------
@@ -27,9 +29,23 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Routes>
+        {/* Home Page Route */}
+        <Route
+          path="/"
+          element={<Home employees={employees} owners={owners} pets={pets} />}
+        />
+        {/* Staff Page Route */}
+        <Route path="/staff" element={<StaffList employees={employees} />} />
+        {/* Pets Route */}
+        <Route path="/pets">
+          <Route index element={<PetsList pets={pets} />} />
+          <Route path=":kind" element={<PetsList pets={pets} />} />
+        </Route>
+      </Routes>
+      {/* <Home employees={employees} owners={owners} pets={pets} /> */}
+      {/* <StaffList employees={employees} /> */}
+      {/* <PetsList pets={pets} /> */}
       <Footer />
     </div>
   );
