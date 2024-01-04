@@ -3,6 +3,9 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 50px 0 50px;
+  /* Create a sticky footer: No matter the height of the rest of the elements the footer is always, at minimum, at the bottom or below. */
+  position: sticky;
+  bottom: 0;
 }
 
 footer p {
