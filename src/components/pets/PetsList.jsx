@@ -17,7 +17,6 @@ export const PetsList = ({ pets }) => {
     [[], []]
   );
 
-
   // const filteredPets = kind === "cats" ? cats : kind === "dogs" ? dogs : pets;
 
   // const filteredPets =
@@ -58,6 +57,7 @@ export const PetsList = ({ pets }) => {
     //     ))}
     //   </section>
     // </section>
+    
   );
 };
 
