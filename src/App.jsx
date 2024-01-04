@@ -11,7 +11,7 @@ import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
 
-console.log(PetsList);
+// console.log(PetsList);
 /*
   Data
   ---------------
