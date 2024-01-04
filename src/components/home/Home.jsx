@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Highlights from "./Highlights";
 import NewsletterForm from "./NewsletterForm";
 import splashImage from "./andrew-s-unsplash.jpg";
@@ -9,8 +10,11 @@ export const Home = ({ employees, owners, pets }) => {
     <main>
       <section className="splash-image">
         <img src={splashImage} alt="Splash." />
-        <Highlights employees={employees} owners={owners} pets={pets} />
-        <NewsletterForm />
+        
+          <Highlights employees={employees} owners={owners} pets={pets} />
+        
+          <NewsletterForm />
+        
       </section>
     </main>
   );
