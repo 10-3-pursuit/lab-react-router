@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
@@ -26,10 +27,26 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Nav /> 
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Home employees={employees} owners={owners} pets={pets} />}
+        />
+        <Route 
+          path="/staff"
+          index element={<StaffList employees={employees} />}
+        />
+
+        <Route path="/pets">
+          {/* whole pet list  */}
+          <Route index element={<PetsList pets={pets} />} /> 
+          {/* path dependent on kind of pet */}
+          <Route path=":kind" element={<PetsList pets={pets} />} />
+        </Route>
+        
+        
+      </Routes>
       <Footer />
     </div>
   );

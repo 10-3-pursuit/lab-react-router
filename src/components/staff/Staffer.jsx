@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export const Staffer = ({ employee }) => {
   const { firstName, lastName, prefix, postfix, title } = employee;
   let name = `${firstName} ${lastName}`;
@@ -7,8 +8,11 @@ export const Staffer = ({ employee }) => {
 
   return (
     <article className="staffer">
-      <h3>{name}</h3>
-      <h4>{title}</h4>
+      src/components/staff/Staffer.jsx
+      {/* <Link to={`/staff/Staffer`}> */}
+        <h3>{name}</h3>
+        <h4>{title}</h4>
+      {/* </Link> */}
     </article>
   );
 };
