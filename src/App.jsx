@@ -34,6 +34,7 @@ function App() {
         {/* path is /staff because in Nav.jsx <a href="/staff">All Staff</a> */}
         <Route path="/pets" element={<PetsList pets={pets} />} />
         {/* path is /pets because in Nav.jsx <a href="/pets">All Pets</a> */}
+        <Route path="/pets/:kind/" element={<PetsList pets={pets} />} />
       </Routes>
       <Footer />
     </div>
