@@ -3,7 +3,14 @@ header {
   background: var(--primary);
   border-bottom: 3px solid var(--white);
   display: flex;
+  /* padding-left: 10%;
+  padding-right: 10%; */
+  width: 100%;
+  box-sizing: border-box;
   padding: 25px 15% 35px;
+  max-height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 header article,
@@ -13,7 +20,7 @@ header aside {
 
 header h1 {
   height: auto;
-  margin: 0;
+  margin: auto;
   font-size: 36px;
 }
 
