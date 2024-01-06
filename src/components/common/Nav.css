@@ -3,11 +3,10 @@ header {
   background: var(--primary);
   border-bottom: 3px solid var(--white);
   display: flex;
-  /* padding-left: 10%;
-  padding-right: 10%; */
   width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box; /* this made everything neat because otherwise had to scroll sideways*/
   padding: 25px 15% 35px;
+  /* added following 3 lines */
   max-height: 100%;
   width: 100%;
   margin: 0;
