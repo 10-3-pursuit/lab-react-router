@@ -25,6 +25,7 @@
   border-radius: 5px;
   color: var(--white);
   font-family: var(--font-zen);
-  margin: 0 25px;
+  /* margin: 0 25px; */
+  margin: auto; 
   padding: 2% 3%;
 }

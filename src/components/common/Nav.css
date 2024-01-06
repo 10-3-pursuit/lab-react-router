@@ -41,8 +41,9 @@ header ul {
 header ul li {
   display: inline-block;
   font-family: var(--font-zen);
-  font-size: 18px;
-  padding: 0 25px;
+  font-size: 18px; /* could make this responsive by adding media query */
+  /* changed padding of links to make responsive */
+  padding: 3% 10%;
 }
 
 header ul li a {
