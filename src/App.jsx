@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import { Route, Routes } from "react-router-dom"; // import Route and Routes
 /*
   Components
 */
@@ -27,9 +27,15 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      {/* create separate views for pages using Route paths */}
+      <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+        <Route path="/staff" element={<StaffList employees={employees} />} /> 
+        {/* path is /staff because in Nav.jsx <a href="/staff">All Staff</a> */}
+        <Route path="/pets" element={<PetsList pets={pets} />} />
+        {/* path is /pets because in Nav.jsx <a href="/pets">All Pets</a> */}
+        <Route path="/pets/:kind" element={<PetsList pets={pets} />} />
+      </Routes>
       <Footer />
     </div>
   );

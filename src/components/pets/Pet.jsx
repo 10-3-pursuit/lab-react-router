@@ -7,13 +7,13 @@ const iconMap = {
 };
 
 export const Pet = ({ kind, pet }) => {
-  const icon = iconMap[kind];
+  const icon = iconMap[kind.toLowerCase()];
   return (
-    <article key={pet.id}>
-      <h3>
-        {icon} {pet.name}
-      </h3>
-    </article>
+        <article>
+          <h3>
+            {icon} {pet.name}
+          </h3>
+        </article>
   );
 };
 
