@@ -32,9 +32,6 @@ export const PetsList = ({ pets }) => {
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
         {/* maps over the cats and dogs arrays to render individual pets: for each cat and dog, it renders a <Pet> component, passing a unique key (using the pet's id), the kind of the pet (either "cat" or "dog"), and the pet object itself */}
-        Debug: Rendering PetsList Component
-        {/* Temporary static render for debugging */}
-
         {!kind && (
           <>
             {cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />)}
