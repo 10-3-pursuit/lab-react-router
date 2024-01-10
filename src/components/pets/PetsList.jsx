@@ -2,10 +2,12 @@ import React from "react";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { petData } from "../../data/pets"
 
-export const PetsList = ({ pets }) => {
+export const PetsList = () => {
+  const [pets] = useState(petData);
   const navigate = useNavigate();
   const { kind } = useParams(); //accesses kind from URL to separate cats vs dogs
   
