@@ -12,6 +12,7 @@ export function NewsletterForm() {
           type="email"
           placeholder="Your email..."
         />
+        <br />
         <button type="submit">Sign Up</button>
       </form>
     </section>

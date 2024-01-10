@@ -1,7 +1,30 @@
-.splash-image img {
-  display: block;
+/* .splash-image img {
+  display: flex;
   height: 70vh;
   width: 100%;
   object-fit: cover;
-  object-position: 50% 60%;
+  object-position: 70% 60%;
+} */
+/* CSS I added */
+.splash-image {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Horizontally center the content */
+  justify-content: center; /* Vertically center the content */
+  text-align: center; /* Center text for child elements */
 }
+
+/* Image Styling */
+.splash-image img {
+  max-height: 70vh; /* Maximum height of the image */
+  width: 100%; /* Full width */
+  object-fit: cover;
+  object-position: center; /* Center the image */
+}
+
+@media (max-width: 600px) {
+  .splash-image img {
+    max-height: 50vh; /* Smaller height for smaller screens */
+  }
+}
+

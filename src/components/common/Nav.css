@@ -3,7 +3,13 @@ header {
   background: var(--primary);
   border-bottom: 3px solid var(--white);
   display: flex;
+  width: 100%;
+  box-sizing: border-box; /* this made everything neat because otherwise had to scroll sideways*/
   padding: 25px 15% 35px;
+  /* added following 3 lines */
+  max-height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 header article,
@@ -13,7 +19,7 @@ header aside {
 
 header h1 {
   height: auto;
-  margin: 0;
+  margin: auto;
   font-size: 36px;
 }
 
@@ -35,8 +41,9 @@ header ul {
 header ul li {
   display: inline-block;
   font-family: var(--font-zen);
-  font-size: 18px;
-  padding: 0 25px;
+  font-size: 18px; /* could make this responsive by adding media query */
+  /* changed padding of links to make responsive */
+  padding: 3% 10%;
 }
 
 header ul li a {

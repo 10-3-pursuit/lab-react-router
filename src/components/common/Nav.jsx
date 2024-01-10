@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 import "./Nav.css";
 
 function Nav() {
@@ -6,18 +7,21 @@ function Nav() {
     <header>
       <article>
         <h1>
-          <a href="/">
+          {/* Replace <a> with <Link> */}
+          <Link to="/">
             Northwest <span>Animal Hospital</span>
-          </a>
+          </Link>
         </h1>
       </article>
       <aside>
         <ul>
           <li>
-            <a href="/staff">All Staff</a>
+            {/* Replace <a> with <Link> */}
+            <Link to="/staff">All Staff</Link>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            {/* Replace <a> with <Link> */}
+            <Link to="/pets">All Pets</Link>
           </li>
         </ul>
       </aside>
