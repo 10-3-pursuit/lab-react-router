@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
-import { Routes, route } from "react-dom";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
@@ -29,36 +28,18 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
+      <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets}/>} />
+        <Route path="/staff" element={<StaffList employees={employees} />} />
+        <Route path="/pets">
+          <Route index element={<PetsList pets={pets} />}  /> 
 
-      
-      <Home employees={employees} owners={owners} pets={pets} />
-
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+          <Route path=":type" element={<PetsList pets={pets} />} />
+        </Route>
+      </Routes>
       <Footer />
     </div>
   );
 }
-
-
-{/* <Nav />
-<Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/shows" >
-    <Route index element={<ShowsIndex />} />
-    <Route path='new' element={<ShowsNewForm />} />
-    <Route path=":id" element={<Show />} />
-    <Route path=":id/edit" element={<ShowsEditForm />} />
-    </Route>
-    <Route path="/movies" >
-    <Route index element={<MoviesIndex />} />
-    <Route path='new' element={<MoviesNewForm />} />
-    <Route path=":id" element={<Movie />} />
-    <Route path=":id/edit" element={<MoviesEditForm />} />
-
-  </Route>
-</Routes> */}
-
-
 
 export default App;
