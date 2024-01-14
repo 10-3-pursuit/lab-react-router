@@ -4,7 +4,7 @@ import NewsletterForm from "./NewsletterForm";
 import splashImage from "./andrew-s-unsplash.jpg";
 import "./Home.css";
 
-export const Home = ({ employees, owners, pets }) => {
+export default function Home ({ employees, owners, pets }) {
   return (
     <main>
       <section className="splash-image">
@@ -16,4 +16,4 @@ export const Home = ({ employees, owners, pets }) => {
   );
 };
 
-export default Home;
+
