@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
@@ -27,9 +28,13 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+        <Route path="/staff" element={<StaffList employees={employees} />} />
+        <Route path="/pets" element={<PetsList pets={pets} />} />
+        <Route path="/pets/dogs" element={<PetsList pets={pets} specie='dog'/>} />
+        <Route path="/pets/cats" element={<PetsList pets={pets} specie='cat'/>} />
+      </Routes>
       <Footer />
     </div>
   );
