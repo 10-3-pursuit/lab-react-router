@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
@@ -15,21 +16,26 @@ import PetsList from "./components/pets/PetsList";
   ---------------
   Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
 */
-import { employeeData } from "./data/employees.js";
+import { employeeData } from "./data/employees";
 import { ownerData } from "./data/owners";
 import { petData } from "./data/pets";
 
 function App() {
-  const [employees] = useState(employeeData);
-  const [owners] = useState(ownerData);
-  const [pets] = useState(petData);
+  const [employees, setEmployees] = useState(employeeData);
+  const [owners, setOwners] = useState(ownerData);
+  const [pets, setPets] = useState(petData);
 
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Routes>
+      <Route path="/" element={<Home employees={employees} owners={owners} pets={pets}/>} />
+      <Route path="/staff" element={<StaffList employees={employees} />} />
+      {/* <Route path="/pets">
+      <Route index element={<PetsList pets={pets} />} />
+      <Route path=":type" element={<PetsList pets={pets} />} />
+      </Route> */}
+      </Routes>
       <Footer />
     </div>
   );

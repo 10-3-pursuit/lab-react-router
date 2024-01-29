@@ -3,7 +3,7 @@
 :root {
   --black: #141115;
   --white: #fffcf9;
-  --primary: #ff6978;
+  --primary: hsl(288, 86%, 52%);
   --font-zen: "Zen Kaku Gothic Antique", sans-serif;
 }
 
