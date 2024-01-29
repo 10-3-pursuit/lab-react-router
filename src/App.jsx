@@ -16,14 +16,14 @@ import PetsList from "./components/pets/PetsList";
   ---------------
   Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
 */
-import { employeeData } from "./data/employees.js";
+import { employeeData } from "./data/employees";
 import { ownerData } from "./data/owners";
 import { petData } from "./data/pets";
 
 function App() {
-  const [employees] = useState(employeeData);
-  const [owners] = useState(ownerData);
-  const [pets] = useState(petData);
+  const [employees, setEmployees] = useState(employeeData);
+  const [owners, setOwners] = useState(ownerData);
+  const [pets, setPets] = useState(petData);
 
   return (
     <div className="wrapper">
@@ -31,10 +31,10 @@ function App() {
       <Routes>
       <Route path="/" element={<Home employees={employees} owners={owners} pets={pets}/>} />
       <Route path="/staff" element={<StaffList employees={employees} />} />
-      <Route path="/pets">
+      {/* <Route path="/pets">
       <Route index element={<PetsList pets={pets} />} />
       <Route path=":type" element={<PetsList pets={pets} />} />
-      </Route>
+      </Route> */}
       </Routes>
       <Footer />
     </div>
